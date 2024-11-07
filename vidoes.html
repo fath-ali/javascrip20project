@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    header{
+        min-height: 100hv;
+        position: relative;
+        display: grid;
+        place-items: center;
+    }
+    .video-container{
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 900px;
+        object-fit: cover;
+        z-index: -2;
+    }
+    h1{
+        color: white;
+    }
+    .switch-btn{
+        position: absolute;
+        bottom: 0%;
+        left: 7%;
+        width: 7rem;
+        height: 2rem;
+        display: flex;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: space-around;
+        border: none;
+        transition: all ease 1s;
+    }
+    .switch-btn span{
+        display: inline-block;
+        font-size: 0.85rem;
+        cursor: pointer;
+        text-transform: capitalize;
+        color: rgb(53, 53, 126);
+    }
+    .switch{
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgb(32, 32, 90);
+        border-radius: 10px;
+        margin: 0;
+        display:block;
+        transition: all ease-in-out;
+
+    }
+    .slide .switch{
+        left: 50%;
+    }
+    header::after{
+        content:  "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 900px;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+</style>
+<body>
+
+    <header>
+        <video  class="video-container"loop autoplay muted>
+            <source src="site.mp4" type="video/mp4">
+
+        </video>
+        <h1>Vidoe project</h1>
+        
+        <button class="switch-btn">
+            <span>
+                play
+            </span>
+            <span>
+                pause
+            </span>
+            <span class="switch"></span>
+        </button>
+    </header>
+
+ <script src="vidoe.js"></script>
+</body>
+</html>

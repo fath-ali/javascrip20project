@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/fontawesome-free-6.5.2-web/css/all.min.css">
+    <script src="fontawesome-free-6.5.2-web/fontawesome-free-6.5.2-web/js/all.min.js"></script>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #5145BA;
+    }
+    .file-uploader{
+        width: 500px;
+        background: #fff;
+        border-radius: 5px;
+    }
+    .file-uploader .uploader-header{
+        display: flex;
+        padding: 20px;
+        align-items: center;
+        justify-content: space-between;
+        background: #EEF1FB;
+        border-radius: 5px 5px 0 0;
+    }
+    .uploader-header .uploader-title{
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .file-uploader .file-completed-status{
+        font-size: 1rem;
+        font-weight: 500;
+        color: #333;
+    }
+    .file-list{
+        list-style: none;
+        width: 100%;
+        padding: 20px;
+        max-height: 400px;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #999 transparent;
+
+    }
+    .file-list .files-extension{
+        height: 50px;
+        width: 50px;
+        color: #Fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        background:#5145BA;
+    }
+    .file-list .file-item{
+        display: flex;
+        gap: 14px;
+        margin-bottom: 23px;
+    }
+    .file-list .file-item .file-content{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+    }
+    .file-list .file-item .file-content-wrapper{
+        flex: 1;
+    }
+    .file-list .file-item .file-name{
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    .file-list .file-item .file-info small{
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #5c5c5c;
+        margin-top: 5px;
+        display: block;
+    }
+    .file-list .file-item .file-info .file-status{
+        color: #5145BA;
+    }
+    .file-list .file-item .file-info{
+        display: flex;
+        gap: 5px;
+    }
+    .file-list .file-item .cancel-button{
+        align-self: center;
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+        font-size: 1.4rem;
+        transition: all ease-in-out 0.5s;
+    }
+    .file-list .file-item .cancel-button:hover{
+        color: #E3413F;
+    }
+    .file-list .file-item .file-progress-bar{
+        width: 100%;
+        height: 3px;
+        margin-top: 10px;
+        border-radius: 30px;
+        background: #d9d9d9;
+        
+    }
+    .file-list .file-item .file-progress-bar .file-progress{
+        width: 50%;
+        height: inherit;
+        border-radius: inherit;
+        background: #5145BA;
+
+    }
+    .file-uploader .file-upload-box{
+        margin: 10px 20px 20px;
+        border-radius: 5px;
+        min-height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px dotted #B1ADD4;
+        transition: 0.3 ease;
+
+    }
+    .file-uploader .file-upload-box.active{
+        border: 2px solid #5145BA;
+        background: #f3f6ff;
+    }
+    .file-uploader .file-upload-box .box-title{
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: #626161;
+    }
+    .file-uploader .file-upload-box.active .box-title{
+        pointer-events: none;
+    }
+
+    .file-upload-box .box-title .file-brows-button{
+       color: #5145BA;
+    }
+    .file-upload-box .box-title .file-brows-button:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    }
+</style>
+<body>
+     <div class="file-uploader">
+        <div class="uploader-header">
+            <h2 class="uploader-title">File Uploader</h2>
+            <h4 class="file-completed-status">0/4 Files Completed</h4>
+        </div>
+        <ul class="file-list">
+            <!-- <li class="file-item">
+                <div class="files-extension">JPG</div>
+                <div class="file-content-wrapper">
+                    <div class="file-content">
+                        <div class="file-details">
+                            <h5 class="file-name">Image_avatar_graphic_02_.jpg</h5>
+                            <div class="file-info">
+                                <small  class="file-size">4 MB / 8 MB</small>
+                                <small  class="file-divider">.</small>
+                                <small  class="file-status">Uploading....</small>
+                            </div>
+                        </div>
+                        <button  class="cancel-button">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="file-progress-bar">
+                        <div class="file-progress"></div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="file-item">
+                <div class="files-extension">JPG</div>
+                <div class="file-content-wrapper">
+                    <div class="file-content">
+                        <div class="file-details">
+                            <h5 class="file-name">Image_avatar_graphic_02_.jpg</h5>
+                            <div class="file-info">
+                                <small  class="file-size">4 MB / 8 MB</small>
+                                <small  class="file-divider">.</small>
+                                <small  class="file-status">Uploading....</small>
+                            </div>
+                        </div>
+                        <button  class="cancel-button">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="file-progress-bar">
+                        <div class="file-progress"></div>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="file-item">
+                <div class="files-extension">JPG</div>
+                <div class="file-content-wrapper">
+                    <div class="file-content">
+                        <div class="file-details">
+                            <h5 class="file-name">Image_avatar_graphic_02_.jpg</h5>
+                            <div class="file-info">
+                                <small  class="file-size">4 MB / 8 MB</small>
+                                <small  class="file-divider">.</small>
+                                <small  class="file-status">Uploading....</small>
+                            </div>
+                        </div>
+                        <button  class="cancel-button">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="file-progress-bar">
+                        <div class="file-progress"></div>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="file-item">
+                <div class="files-extension">JPG</div>
+                <div class="file-content-wrapper">
+                    <div class="file-content">
+                        <div class="file-details">
+                            <h5 class="file-name">Image_avatar_graphic_02_.jpg</h5>
+                            <div class="file-info">
+                                <small  class="file-size">4 MB / 8 MB</small>
+                                <small  class="file-divider">.</small>
+                                <small  class="file-status">Uploading....</small>
+                            </div>
+                        </div>
+                        <button  class="cancel-button">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="file-progress-bar">
+                        <div class="file-progress"></div>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="file-item">
+                <div class="files-extension">JPG</div>
+                <div class="file-content-wrapper">
+                    <div class="file-content">
+                        <div class="file-details">
+                            <h5 class="file-name">Image_avatar_graphic_02_.jpg</h5>
+                            <div class="file-info">
+                                <small  class="file-size">4 MB / 8 MB</small>
+                                <small  class="file-divider">.</small>
+                                <small  class="file-status">Uploading....</small>
+                            </div>
+                        </div>
+                        <button  class="cancel-button">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="file-progress-bar">
+                        <div class="file-progress"></div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="file-item">
+                <div class="files-extension">JPG</div>
+                <div class="file-content-wrapper">
+                    <div class="file-content">
+                        <div class="file-details">
+                            <h5 class="file-name">Image_avatar_graphic_02_.jpg</h5>
+                            <div class="file-info">
+                                <small  class="file-size">4 MB / 8 MB</small>
+                                <small  class="file-divider">.</small>
+                                <small  class="file-status">Uploading....</small>
+                            </div>
+                        </div>
+                        <button  class="cancel-button">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="file-progress-bar">
+                        <div class="file-progress"></div>
+                    </div>
+                </div>
+            </li> -->
+        </ul>
+            <div class="file-upload-box">
+                <h2 class="box-title">
+                    <span class="file-instruction">Drag Files Here Or</span>
+                    <span class="file-brows-button">Brows</span>
+                </h2>
+                <input class="file-browse-input" type="file" multiple hidden>
+            </div>
+     </div>
+    <script src="uploader.js" defer></script>
+</body>
+</html>

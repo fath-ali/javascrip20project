@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+    .main{
+        width: 100%;
+        height: 100vh;
+        position: relative;
+         overflow: hidden;
+         background: linear-gradient(to right,#9c27b0,#8ecdff);
+    }
+    nav{
+        width: 80%;
+        position: sticky;
+        margin:20px auto;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+    }
+    .logo{
+        flex-basis: 20%;
+    }
+    .logo h1{
+        width: 150px;
+    }
+    .nav-link{
+        flex: 1;
+        text-align: right;
+    }
+    .nav-link ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+    }
+    .nav-link ul li a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.3rem;
+    }
+    .information{
+        width: 1000px;
+        background-color: red;
+        height: 1000px;
+        position: absolute;
+        top: 50%;
+        left: -10%;
+        transform: translateY(-50%);
+    }
+    #circle{
+        width: 1000px;
+        height: 1000px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+        border-radius: 50%;
+        background: #ccc;
+    }
+</style>
+<body>
+    <div  class="main">
+        <nav>
+            <div class="logo">
+                <h1>hello world</h1>
+            </div>
+            <div class="nav-link">
+                <ul>
+                    <li><a href="">home</a></li>
+                    <li><a href="">about</a></li>
+                    <li><a href="">contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="information">
+            <div id="circle">
+                <div class="feature">
+                    <img src="pictures/62e278900ac3f97da2993cfa_ring.png.png" alt="">
+                </div>
+                <div class="feature">
+                    <img src="pictures/62e2789c43e8e1d24b92c90a_watch.png.png" alt="">
+                </div>
+                <div class="feature">
+                    <img src="pictures/62e278ae71578c984e207adb_Drone.png.png" alt="" >
+                </div>
+                <div class="feature">
+                    <img src="pictures/Container.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="slidshow.js"></script>
+</body>
+</html>

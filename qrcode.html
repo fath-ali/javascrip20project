@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/fontawesome-free-6.5.2-web/css/all.min.css">
+    <script src="fontawesome-free-6.5.2-web/fontawesome-free-6.5.2-web/js/all.min.js"></script>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #E3F2FD;
+    }
+    .wrapper{
+        width: 420px;
+        border-radius: 7px;
+        background: #0b85ff;
+        padding: 30px 30px 25px;
+        height: 270px;
+    }
+    .wrapper form{
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 210px;
+        text-align: center;
+
+    }
+    form img{
+        width: 150px;
+        object-fit: cover;
+        display: none;
+    }
+    form .content{
+        /* display: none; */
+    }
+    .content .cloud{
+        font-size: 55px;
+        color: #0b85ff;
+    }
+    .content p{
+        font-size: 16px;
+        margin-top: 15px;
+        color: #0b85ff;
+    }
+    .wrapper .details{
+        margin-top: 25px;
+        opacity: 0;
+        pointer-events:none;
+
+    }
+    .details textarea{
+        width: 100%;
+        height: 128px;
+        padding: 10px 15px;
+        background:none;
+        outline: none;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        font-size: 18px;
+        color: #fff;
+    }
+    .details .buttons{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+
+    } 
+    .buttons button{
+        height: 40px;
+        width: 100px;
+        border: none;
+        outline: none;
+        color: #0b85ff;
+        border-radius: 5px;
+        background: #fff;
+        font-size:16px;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+    .wrapper.active{
+        height: 525px;
+    }
+</style>
+<body>
+    
+  <div class="wrapper">
+    <form action= "">
+        <img src=".//62e278ae71578c984e207adb_Drone.png.png" alt="">
+        <div class="content">
+            <input type="file" hidden>
+            <i class="fas fa-cloud-upload cloud"></i>
+            <p>Upload QR Code to Scan</p>
+        </div>
+    </form>
+    <div class="details">
+        <textarea disabled>This is qr code reader app made with html css & javascript</textarea>
+        <div class="buttons">
+            <button class="close">close</button>
+            <button class="copy">copyText</button>
+        </div>
+    </div>
+
+  </div>
+    <script src="qrcode.js"></script>
+</body>
+</html>

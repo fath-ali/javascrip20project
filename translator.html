@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/fontawesome-free-6.5.2-web/css/all.min.css">
+    <script src="fontawesome-free-6.5.2-web/fontawesome-free-6.5.2-web/js/all.min.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        min-height: 100vh;
+        background: #5372f0;
+    }
+    .container{
+        width:700px;
+        background-color:#fff;
+        border-radius: 7px;
+        padding: 30px;
+    }
+    .wrapper{
+        border: 1px solid #bbb;
+        border-radius: 5px;
+
+    }
+    .text-input textarea{
+        height: 250px;
+        width: 100%;
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 18px;
+        padding: 10px 15px;   
+        resize: none;   
+    }
+    .wrapper .text-input{
+        display: flex;
+        border-bottom: 2px solid #bbb;
+        
+    }
+    .text-input .to-text{
+        border-left: 1px solid #bbb;
+        border-radius: 0px;
+    }
+    .control,li, .icons{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .control{
+        list-style: none;
+        padding: 12px 15px;
+        width: 40%;
+
+
+    }
+    .control .icons{
+        width: 38%;
+        width: 100%;
+    }
+    .control .icons i{
+        color: #9f9f9f;
+        font-size: 14px;
+        cursor: pointer;
+        width: 50px
+    }
+    .control .row select{
+        border: none;
+        outline: none;
+        background:none;
+        font-size: 18px;
+    }
+    .control .exchange{
+        color: #9f9f9f;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .control .row.from .icons{
+        border-right: 1px solid #bbb;
+        padding-right: 15px;
+    }
+    .control .row.to .icons{
+        padding-left: 15px;
+        border-left: 1px solid #bbb;
+    }
+    .container button{
+        width: 100%;
+        padding: 14px;
+        margin-top: 20px;
+        outline: none;
+        background: #5372f0;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1.6rem;
+    }
+    .btn{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+    font-weight: 800;
+    }
+    .p1{
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-transform: capitalize;
+    }
+    .p2{
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-transform: capitalize;
+    }
+    .a1{
+        text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+    font-weight: 800;
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="text-input">
+                <textarea  class="from-text" placeholder="Enter Text"></textarea>
+                <textarea  class="to-text" placeholder="Translator" readonly disabled></textarea>
+            </div>
+            <ul class="control">
+                <li class="row from">
+                    <div class="icons">
+                        <!-- <i class="fas fa-volume-up"></i> -->
+                         <p class="p1">Sound</p>
+                        <!-- <i class="fas fa-copy"></i> -->
+                         <a href="" class="btn">copy</a>
+                    </div>
+                    <select></select>
+                </li>
+                <li class="exchange">
+                    <i class="fas fa-exchange-alt"></i>
+                </li>
+                <li class="row to">
+                    <select></select>
+                    <div class="icons">
+                        <p class="p2">Sound</p>
+                        <!-- <i class="fas fa-volume-up"></i> -->
+                        <!-- <i class="fas fa-copy"></i> -->
+                         <a href="" class="a1">copy</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button>Translate Text</button>
+    </div>
+    <script src="javascript/countries.js"></script>
+    <script src="javascript/translator.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        list-style: none;
+        font-family: sans-serif;
+    }
+    body{
+        background-color:black;
+    }
+    .gallery{
+        width: 900px;
+        display: flex;
+        overflow-x: scroll;
+        position:relative;
+    }
+    .gallery div{
+        width: 100%;
+        display: grid;
+        grid-template-columns:auto auto auto;
+        grid-gap: 20px;
+        padding: 20px;
+        flex:none;
+        margin-top: 40px auto;
+       margin-top: 30%;
+       margin-left: 20%;
+    }
+    .gallery div img{
+        width: 100%;
+        filter: grayscale(100%);
+        transition: all ease 1s;
+
+    }
+    .gallery::-webkit-scrollbar{
+        display: none;
+    }
+    .gallery div img:hover{
+        filter: grayscale(0);
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+</style>
+<body>
+     <div class="gallery">
+        <div> 
+            <span><img src="pictures/p-7.jpg" alt=""></span>
+            <span><img src="pictures/p-7.jpg" alt=""></span>
+            <span><img src="pictures/p-9.png" alt=""></span>
+     
+        </div>
+        <div>
+            <span><img src="pictures/p-7.jpg" alt=""></span>
+            <span><img src="pictures/p-7.jpg" alt=""></span>
+            <span><img src="pictures/p-9.png" alt=""></span>
+        </div>
+   
+     </div>
+     <button id="next">next</button>
+    <script src="scroll.js"></script>
+</body>
+</html>

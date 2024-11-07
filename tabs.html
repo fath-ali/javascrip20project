@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        text-transform: capitalize;
+        font-family: sans-serif;
+    }
+    .title{
+        text-align: center;
+        margin-top: 10%;
+    }
+    .title h2{
+     font-size: 2.7rem;
+     text-transform: uppercase;
+    }
+    .title p{
+        font-size: 1.6rem;
+        padding-top: 20px ;
+    }
+    .section-center{
+        display: flex;
+        gap: 50px;
+        margin-top: 40px;
+    }
+    .about-img{
+        width: 40%;
+        height: 400px;
+        overflow: hidden;
+        margin-left: 100px;
+    }
+     .about-img img{
+        width: 100%;
+        height: 100%;
+     }
+     .about{
+        /* background-color: red; */
+        box-shadow: 0px 0px 10px 10px whitesmoke;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+     }
+     .about .btn-container{
+        display: flex;
+        /* gap: 30px; */
+        /* background-color: rgb(231, 217, 217); */
+     }
+     .tab-btn{
+        width: 100%;
+        height: 50px;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        /* background-color: transparent; */
+        outline: none;
+        border: none;
+        transition:  all ease-in-out 1s;
+     }
+     .tab-btn:hover:not(.active){
+        letter-spacing: 1rem;
+        color: red;
+     }
+     .tab-btn.active{
+        background-color: white;
+     }
+      .about-content{
+        padding-left: 30px;
+        font-size: 1.5rem;
+        font-family: sans-serif;
+        padding: 30px 30px;
+        
+      }
+      .content{
+        display: none;
+      }
+      .content.active{
+        display:block;
+      }
+</style>
+<body>
+        <section>
+            <div class="title">
+                <h2>about </h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore sequi eum provident.</p>
+            </div>
+            <div class="about-center section-center">
+                <article class="about-img">
+                    <img src="p-17.jpg" alt="">
+                </article>
+                <article class="about">
+                 <div class="btn-container">
+                    <button class="tab-btn active" data-id="history">history</button>
+                    <button class="tab-btn" data-id="vision">vision</button>
+                    <button class="tab-btn" data-id="goals">goals</button>
+                 </div>
+
+
+                 <article class="about-content">
+                    <div class="content active" id="history">
+                        <h1>history</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam corrupti magnam sit, alias placeat expedita fugiat amet necessitatibus neque nesciunt
+                            , repellat dolorum dignissimos
+                            . Accusantium quod dignissimos
+                             suscipit eveniet repellat distinctio.</p>
+                        
+                    </div>
+                        <!-- --------next -->
+                    <div class="content " id="vision">
+                        <h1>vision</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe repellendus tempore nulla architecto similique, e
+                            veniet nobis nam quam omnis nihil neque 
+                            vitae sapiente ab deserunt fugit iste, 
+                            vero repellat nisi?</p>
+                    </div>
+
+                       <!-- ---------------next-------------- -->
+                    <div class="content" id="goals">
+                        <h1>goals</h1>
+                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ab eveniet voluptates pariatur, optio enim corporis cupiditate? Magni,
+                             asperiores distinctio illum iu
+                             sto dicta ratione iure error
+                             , quaerat est nostrum repudiandae!</p>
+                    </div>
+                </article>
+                </article>
+                <!-- ---------------mext ----------------- -->
+                
+            </div>
+        </section>
+    <script src="tabs.js"></script>
+</body>
+</html>

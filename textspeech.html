@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #5256ad;
+        }
+        .wrapper{
+            background: #fff;
+            border-radius: 7px;
+             width: 370px;
+             padding: 25px 30px;
+        }
+        .wrapper header{
+            text-align: center;
+            font-size: 28px;
+            font-weight: 500;
+        }
+        .wrapper form{
+            margin: 35px 0 20px;
+        }
+        form .row{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+        }
+        form .row label{
+            margin-bottom: 18px;
+            font-size: 18px;
+        }
+        form :where(textarea,select,button){
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+
+        }
+        form .row textarea{
+            border: 1px solid #999;
+            resize: none;
+            height: 110px;
+            font-size: 15px;
+            padding: 8px 10px;
+        }
+        form .row .outer{
+            height: 47px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            display: flex;
+            padding: 0 10px;
+            align-items: center;
+        }
+        form .row select{
+            font-size: 1.3rem;
+        }
+        form button{
+            height:52px;
+            margin-top: 10px;
+            background: #5256ad;
+            color: #ffffff;
+            cursor: pointer;
+           font-size: 1.5rem; 
+        }
+        p{
+            color: red;
+            text-transform: capitalize;
+            padding: 10px 0;
+            display: none;
+        }
+        p.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>Text To Speech</header>
+        <form action="">
+            <div class="row">
+                <label for=""3>Enter Text</label>
+                <textarea></textarea>
+                <p>please Insert Someting</p>
+            </div>
+            <div class="row">
+                <label for="">Select Voice</label>
+                <div class="outer">
+                <select>
+                </select>
+                </div>
+            </div>
+            <button>Converter To Speech</button>
+        </form>
+    </div>
+
+    <script src="textspeech.js"></script>
+</body>
+</html>
